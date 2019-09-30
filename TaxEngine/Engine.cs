@@ -7,6 +7,11 @@ namespace TaxEngine
 {
     public class Engine
     {
+        /// <summary>
+        /// คำนวนภาษี
+        /// </summary>
+        /// <param name="inputCommand"></param>
+        /// <returns>ภาษีที่ต้องจ่ายแยกตามข้อ ก 1 - 12</returns>
         public TaxResultModel TaxCalculator(TaxCalculatorCommand inputCommand)
         {
             TaxCalculatorCommand command = inputCommand;
@@ -132,7 +137,7 @@ namespace TaxEngine
             //10
             allowance += InvestmentPackageAllowance(model.RMF, model.GPF, model.ProvFund,model.SavingFund, model.TeacherFund, model.PensionInsurance, model.TotalIncome);
             //13
-            allowance += RealEstateAllowance(model.RealEstatePrice);
+            allowance += RealEstateAllowance(model.RealEstatePrice,model.HouseYearBuy);
             //19
             allowance += model.MaternityAllowance;
             //12, 14, 17, 18, 15, 20, 21
@@ -288,12 +293,28 @@ namespace TaxEngine
             //return totalInvest;
         }
 
-        public decimal RealEstateAllowance(decimal realEstatePrice)
+        public decimal RealEstateAllowance(decimal realEstatePrice, int year)
         {
-            if (realEstatePrice > 5000000 || realEstatePrice < 200000)
-                return 0;
+            if (year == 2562)
+            {
+                if (realEstatePrice > 5000000 || realEstatePrice < 200000)
+                    return 0;
 
-            return 200000;
+                return 200000;
+            }
+
+            if (year == 2558)
+            {
+                if (realEstatePrice > 3000000 || realEstatePrice < 200000)
+                    return 0;
+
+                if ((realEstatePrice * 0.2m)/5 > 120000m)
+                    return 120000;
+
+                return realEstatePrice * 0.2m/5;
+            }
+
+            return 0;
         }
 
         //12, 14, 15, 17, 18,20, 21

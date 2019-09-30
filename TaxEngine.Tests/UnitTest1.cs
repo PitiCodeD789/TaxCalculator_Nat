@@ -192,17 +192,17 @@ namespace Tests
             Assert.AreEqual(expectedResult, result);
         }
 
-        [TestCase(500000, 500000, 500000, 500000, 500000, 10000000, 0)] // Other Invest Exceed 500,000
-        [TestCase(500000, 100000, 100000, 100000, 500000, 10000000, 200000)] // Capped by Other Invest (300,000)
-        [TestCase(500000, 0, 0, 0, 0, 100000, 15000)] // 15% Cap RMF
-        [TestCase(0, 0, 0, 0, 5000000, 100000, 15000)] // 500000 Cap TeacherFund
-        [TestCase(5000, 1000, 1000, 1000, 1000, 100000, 6000)] // Min RMF + Pension
-        [TestCase(0, 0, 0, 0, 0, 0, 0)] // Zeroed out
-        public void Test_Engine_InvestmentPackageAllowance(decimal rMF, decimal gPF, decimal provFund, decimal teacherFund, decimal pensionInsurance, decimal totalIncomeA5, decimal expectedResult)
-        {
-            var result = engine.InvestmentPackageAllowance(rMF, gPF, provFund, teacherFund, pensionInsurance, totalIncomeA5);
-            Assert.AreEqual(expectedResult, result);
-        }
+        //[TestCase(500000, 500000, 500000, 500000, 500000, 10000000, 0)] // Other Invest Exceed 500,000
+        //[TestCase(500000, 100000, 100000, 100000, 500000, 10000000, 200000)] // Capped by Other Invest (300,000)
+        //[TestCase(500000, 0, 0, 0, 0, 100000, 15000)] // 15% Cap RMF
+        //[TestCase(0, 0, 0, 0, 5000000, 100000, 15000)] // 500000 Cap TeacherFund
+        //[TestCase(5000, 1000, 1000, 1000, 1000, 100000, 6000)] // Min RMF + Pension
+        //[TestCase(0, 0, 0, 0, 0, 0, 0)] // Zeroed out
+        //public void Test_Engine_InvestmentPackageAllowance(decimal rMF, decimal gPF, decimal provFund, decimal teacherFund, decimal pensionInsurance, decimal totalIncomeA5, decimal expectedResult)
+        //{
+        //    var result = engine.InvestmentPackageAllowance(rMF, gPF, provFund, teacherFund, pensionInsurance, totalIncomeA5);
+        //    Assert.AreEqual(expectedResult, result);
+        //}
 
 
         [TestCase(200000,100000)]
@@ -254,15 +254,15 @@ namespace Tests
             Assert.AreEqual(model.ExpectedResult, result);
         }
 
-        [TestCase(5000000,200000)]
-        [TestCase(1000000,200000)]
-        [TestCase(10000000,0)]
-        [TestCase(0,0)]
-        public void Test_Engine_RealEstateAllowance(decimal realEstatePrice, decimal expectedResult)
-        {
-            var result = engine.RealEstateAllowance(realEstatePrice);
-            Assert.AreEqual(expectedResult, result);
-        }
+        //[TestCase(5000000,200000)]
+        //[TestCase(1000000,200000)]
+        //[TestCase(10000000,0)]
+        //[TestCase(0,0)]
+        //public void Test_Engine_RealEstateAllowance(decimal realEstatePrice, decimal expectedResult)
+        //{
+        //    var result = engine.RealEstateAllowance(realEstatePrice);
+        //    Assert.AreEqual(expectedResult, result);
+        //}
 
         static TaxCalculatorCommand[] CommandList =
 {
