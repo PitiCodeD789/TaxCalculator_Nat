@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TaxCalculator.MainPage">
+
+    <ScrollView>
+        <StackLayout Padding="10,0">
+            <Label Text="รายรับต่อปีทั้งหมด"/>
+            <Entry Placeholder="ก1 รายรับต่อปีทั้งหมด" Text="{Binding Model.TotalIncome}"/>
+            <Label Text="อายุ"/>
+            <Entry Placeholder="อายุ" Text="{Binding Model.Age}"/>
+            <Label Text="กองทุนสงเคราะห์ครูเอกชน"/>
+            <Entry Placeholder="กองทุนสงเคราะห์ครูเอกชน" Text="{Binding Model.TeacherFund}"/>
+            <Label Text="กองทุนสำรองเลี้ยงชีพ"/>
+            <Entry Placeholder="กองทุนสำรองเลี้ยงชีพ" Text="{Binding Model.ProvFund}"/>
+            <Label Text="กองทุนข้าราชการบำนาญ"/>
+            <Entry Placeholder="กองทุนข้าราชการบำนาญ" Text="{Binding Model.GPF}"/>
+            <Label Text="ชดเชยตามกฏหมายแรงงาน"/>
+            <Entry Placeholder="ชดเชยตามกฏหมายแรงงาน" Text="{Binding Model.LeaveCompensate}"/>
+            <Label Text="ลูกที่ลดได้ที่เกิดก่อน 2561"/>
+            <Entry Placeholder="ลูกที่ลดได้ที่เกิดก่อน 2561" Text="{Binding Model.EligibleChildBefore2561}"/>
+            <Label Text="ลูกเลี้ยงที่ลดหย่อนได้"/>
+            <Entry Placeholder="ลูกเลี้ยงที่ลดหย่อนได้" Text="{Binding Model.EligibleAdoptedChild}"/>
+            <Label Text="ลูกที่ลดได้ที่เกิดก่อนที่เกิดหลัง 2561"/>
+            <Entry Placeholder="ลูกที่ลดได้ที่เกิดก่อนที่เกิดหลัง 2561" Text="{Binding Model.EligibleChildAfter2561}"/>
+            <Label Text="จำนวนพ่อแม่ของตัวเองที่ใช้สิทธิ"/>
+            <Entry Placeholder="จำนวนพ่อแม่ของตัวเองที่ใช้สิทธิ" Text="{Binding Model.OwnParent}"/>
+            <Label Text="จำนวนคนพิการในครบครัวที่ดูแล"/>
+            <Entry Placeholder="จำนวนคนพิการในครบครัวที่ดูแล" Text="{Binding Model.InFamilyDisable}"/>
+            <Label Text="ประกันของพ่อแม่"/>
+            <Entry Placeholder="ประกันของพ่อแม่" Text="{Binding Model.ParentalInsurance}"/>
+            <Label Text="เบี้ยประกันชีวิตตนเอง"/>
+            <Entry Placeholder="เบี้ยประกันชีวิตตนเอง" Text="{Binding Model.LifeInsurance}"/>
+            <Label Text="เบี้ยประกันสุขภาพตนเอง"/>
+            <Entry Placeholder="เบี้ยประกันสุขภาพตนเอง" Text="{Binding Model.HealthInsurance}"/>
+            <Label Text="เงินสะสมกองทุนการออมแห่งชาติ"/>
+            <Entry Placeholder="เงินสะสมกองทุนการออมแห่งชาติ" Text="{Binding Model.SavingFund}"/>
+            <Label Text="LTF"/>
+            <Entry Placeholder="LTF" Text="{Binding Model.LTF}"/>
+            <Label Text="RMF"/>
+            <Entry Placeholder="RMF" Text="{Binding Model.RMF}"/>
+            <Label Text="เบี้ยประกันชีวิตแบบบำนาญ"/>
+            <Entry Placeholder="เบี้ยประกันชีวิตแบบบำนาญ" Text="{Binding Model.PensionInsurance}"/>
+            <Label Text="เงินบริจาคพรรคการเมือง"/>
+            <Entry Placeholder="เงินบริจาคพรรคการเมือง" Text="{Binding Model.PoliticalParty}"/>
+            <Label Text="ค่าท่องเที่ยว 'จังหวัดท่องเที่ยวรอง'"/>
+            <Entry Placeholder="ค่าท่องเที่ยว 'จังหวัดท่องเที่ยวรอง'" Text="{Binding Model.TravelExpense}"/>
+            <Label Text="ประกันสังคม"/>
+            <Entry Placeholder="ประกันสังคม" Text="{Binding Model.SocialSecurity}"/>
+            <Label Text="ดอกเบี้ยอสังหา"/>
+            <Entry Placeholder="ดอกเบี้ยอสังหา" Text="{Binding Model.HousingInterest}"/>
+            <Label Text="ค่าลงหุ้นหรือลงทุนในการจัดตั้งหรือเพิ่มทุนในกิจการที่ประกอบอุตสาหกรรมเป้าหมาย"/>
+            <Entry Placeholder="ค่าลงหุ้นหรือลงทุนในการจัดตั้งหรือเพิ่มทุนในกิจการที่ประกอบอุตสาหกรรมเป้าหมาย" Text="{Binding Model.StartupInvestment}"/>
+            <Label Text="ค่าติดตั้งกล้องวงจรปิด"/>
+            <Entry Placeholder="ค่าติดตั้งกล้องวงจรปิด" Text="{Binding Model.CctvExpense}"/>
+            <Label Text="ค่าซื้อสินค้าหรือค่าบริการ"/>
+            <Entry Placeholder="ค่าซื้อสินค้าหรือค่าบริการ" Text="{Binding Model.OtherExpense}"/>
+            <Label Text="เงินบริจาคสนับสนุนการศึกษา"/>
+            <Entry Placeholder="เงินบริจาคสนับสนุนการศึกษา การกีฬา" Text="{Binding Model. EducationDonation}"/>
+            <Label Text="เงินบริจาค"/>
+            <Entry Placeholder="เงินบริจาค" Text="{Binding Model.OtherDonation}"/>
+            <Label Text="เงินได้ที่จ่ายเพื่อซื้ออสังหาริมทรัพย์ฯ"/>
+            <Entry Placeholder="เงินได้ที่จ่ายเพื่อซื้ออสังหาริมทรัพย์ฯ" Text="{Binding Model.RealEstatePrice}"/>
+            <Label Text="ปีที่ซื้อบ้าน (พศ)"/>
+            <Entry Placeholder="ปีที่ซื้อบ้าน (พศ)" Text="{Binding Model.HouseYearBuy}"/>
+            <Label Text="ค่าฝากครรภ์และค่าคลอดบุตร"/>
+            <Entry Placeholder="ค่าฝากครรภ์และค่าคลอดบุตร" Text="{Binding Model.MaternityAllowance}"/>
+            <Label Text="{Binding ResultModel.A1}"/>
+            <Label Text="{Binding ResultModel.A2}"/>
+            <Label Text="{Binding ResultModel.A3}"/>
+            <Label Text="{Binding ResultModel.A4}"/>
+            <Label Text="{Binding ResultModel.A5}"/>
+            <Label Text="{Binding ResultModel.A6}"/>
+            <Label Text="{Binding ResultModel.A7}"/>
+            <Label Text="{Binding ResultModel.A8}"/>
+            <Label Text="{Binding ResultModel.A9}"/>
+            <Label Text="{Binding ResultModel.A10}"/>
+            <Label Text="{Binding ResultModel.A11}"/>
+            <Label Text="{Binding ResultModel.A12}"/>
+            <Button Text="Reset" Command="{Binding ResetValueCommand}"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
